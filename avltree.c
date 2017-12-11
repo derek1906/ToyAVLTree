@@ -71,6 +71,7 @@ void avlTreeInsert(AvlTreeNode** root, AvlTreeNode* newNode) {
 
 /*
 	Delete a tree node. Private method.
+	Reference: http://www.cs.toronto.edu/~krueger/csc263h/lectures/tut03.txt
  */
 AvlTreeNode* _avlTreeDelete(AvlTreeNode** root) {
 	AvlTreeNode* node = *root;
@@ -108,6 +109,7 @@ AvlTreeNode* _avlTreeDelete(AvlTreeNode** root) {
 
 /*
 	Remove a node and rebalance tree.
+	Reference: http://www.cs.toronto.edu/~krueger/csc263h/lectures/tut03.txt
  */
 AvlTreeNode** originalRoot = NULL;
 AvlTreeNode* avlTreeRemove(AvlTreeNode** root, int key) {
