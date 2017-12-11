@@ -75,7 +75,6 @@ void avlTreeInsert(AvlTreeNode** root, AvlTreeNode* newNode) {
  */
 AvlTreeNode* _avlTreeDelete(AvlTreeNode** root) {
 	AvlTreeNode* node = *root;
-	AvlTreeNode* parent = node->parent;
 
 	if(node->left == NULL && node->right == NULL) {
 		// 0 children
@@ -85,11 +84,11 @@ AvlTreeNode* _avlTreeDelete(AvlTreeNode** root) {
 		// 2 children
 
 		// get successor
-		AvlTreeNode* next = node->right;
 		AvlTreeNode** nextAddress = &node->right;
+		AvlTreeNode* next = node->right;
 		while(next->left) {
-			next = next->left;
 			nextAddress = &next->left;
+			next = next->left;
 		}
 
 		node->key = next->key;             	// replace content
